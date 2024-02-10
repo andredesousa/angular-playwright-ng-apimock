@@ -70,10 +70,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-playwright:build:production"
+              "browserTarget": "angular-playwright:build:production",
+              "proxyConfig": "server.config.js"
             },
             "development": {
-              "browserTarget": "angular-playwright:build:development"
+              "browserTarget": "angular-playwright:build:development",
+              "proxyConfig": "server.config.js"
             }
           },
           "defaultConfiguration": "development"

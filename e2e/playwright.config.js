@@ -26,7 +26,7 @@ module.exports = {
       'html',
       {
         open: 'never',
-        outputFolder: 'build/e2e',
+        outputFolder: '../build/e2e',
       },
     ],
   ],

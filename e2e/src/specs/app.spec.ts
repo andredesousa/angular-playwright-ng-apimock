@@ -1,7 +1,7 @@
-import { expect, test } from '@playwright/test';
+import {
+  expect, test, describe, beforeEach,
+} from '../../fixtures';
 import { AppPage } from '../page-objects/app.po';
-
-const { describe, beforeEach } = test;
 
 describe('App', () => {
   let appPage: AppPage;
