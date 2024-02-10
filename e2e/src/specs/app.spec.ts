@@ -1,16 +1,13 @@
 import {
   expect, test, describe, beforeEach,
-} from '../../fixtures';
-import { AppPage } from '../page-objects/app.po';
+} from '../../fixtures.po';
 
 describe('App', () => {
-  let appPage: AppPage;
-
-  beforeEach(({ page }) => {
-    appPage = new AppPage(page);
+  beforeEach(async ({ ngApimock }) => {
+    await ngApimock.setNgApimockCookie();
   });
 
-  test('should display welcome message', async () => {
+  test('should display welcome message', async ({ appPage }) => {
     await appPage.navigateTo('/');
 
     await expect(appPage.getTitleText()).toHaveText('Angular app is running!');
