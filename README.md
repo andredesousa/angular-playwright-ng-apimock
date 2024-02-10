@@ -34,7 +34,7 @@ Use `npm rum models` to generate the example used in this project.
 
 This project uses [ng-apimock](https://ngapimock.org/) to provide mock data.
 You can access the development interface for `ng-apimock` navigating to `http://localhost:3000/endpoints`.
-The `ng-apimock` server is automatically started with `start` command but you can run separately by running `npm run server`.
+The `ng-apimock` server is automatically started with `start` command but you can run separately by running `npm run serve:api`.
 You can change `ng-apimock` configuration opening [server.js](e2e/server/server.js) file.
 
 ## Linting and formatting code
