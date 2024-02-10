@@ -1,21 +1,9 @@
-# Testing an Angular app with Playwright
+# Angular e2e-testing using Playwright and @ng-apimock
 
-This project provides a baseline code base to help you kick start an Angular project with end-to-end tests.
-It was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13 and [Node.js](https://nodejs.org/en/about/releases) version 14.
-This project uses [Jest](https://jestjs.io/) for unit testing and [Playwright](https://playwright.dev/) for end-to-end testing.
-
-## Overview
-
-End-to-end tests will allow you to trace bugs and errors in the behavior of your system.
-They are a means of testing if all units of an application interact as expected with each other and if the system as a whole works as intended.
-
-It is important to keep in mind that, maybe contrary to unit tests, e2e tests are black-box tests and only care about the functionality of the application from an end user point of view.
-Whether or not the services around the application work properly, or that responses from the server are correct, and so on, is outside the scope of e2e testing.
-
-Playwright is a framework for Web Testing and Automation.
-It allows testing Chromium, Firefox and WebKit with a single API.
-Playwright is built to enable cross-browser web automation that is ever-green, capable, reliable and fast.
-Headless execution is supported for all the browsers on all platforms.
+You often need to provide data to support application development.
+This project uses [ng-apimock](https://ngapimock.org/) to provide mock data.
+It allows the developing and testing without the real APIs running.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13 and [Node.js](https://nodejs.org/en/about/releases) version 14.
 
 ## Available npm scripts
 
@@ -24,6 +12,7 @@ The scripts in [package.json](package.json) file were built with simplicity in m
 The next scripts should be executed in a console inside the root directory:
 
 - `start` - Runs the application.
+- `models` - Generates the entities sources.
 - `check` - Runs all checks.
 - `lint` - Runs several static code analysis.
 - `lint:fix` - Applies lint rules to source code.
@@ -35,10 +24,22 @@ The next scripts should be executed in a console inside the root directory:
 
 For more details, read the [npm scripts](https://docs.npmjs.com/cli/v8/using-npm/scripts) documentation.
 
+## Development server
+
+Use `npm run serve` for a dev server. Navigate to <http://localhost:4200/>.
+The app will automatically reload if you change any of the source files.
+
+If you create REST APIs and need to build a front-end application that consumes the APIs, the [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification) can be used to generate the models and web client in an Angular application using [ng-openapi-gen](https://www.npmjs.com/package/ng-openapi-gen) Node.js module.
+Use `npm rum models` to generate the example used in this project.
+
+This project uses [ng-apimock](https://ngapimock.org/) to provide mock data.
+You can access the development interface for `ng-apimock` navigating to `http://localhost:3000/endpoints`.
+The `ng-apimock` server is automatically started with `start` command but you can run separately by running `npm run serve:api`.
+You can change `ng-apimock` configuration opening [server.js](e2e/server/server.js) file.
+
 ## Linting and formatting code
 
 Linters are also excellent tools for finding certain classes of bugs, such as those related to variable scope.
-[ESLint](https://eslint.org/) helps maintain the code quality.
 
 Use `npm run lint` to analyze your code.
 Many problems can be automatically fixed with `npm run lint:fix`.
@@ -74,11 +75,12 @@ These functionalities are provided natively or based on plugins.
 You can use our IDE for debugging unit and end-to-end tests.
 Also, you can debug tests with `debugger` keyword if you run `npm run test:debug` or `npm run playwright:debug`.
 When you are using the debug scripts, you need to open the `chrome://inspect` page.
+The same is valid when you run `npm run test:debug` script.
 These functionalities are provided natively or based on plugins.
 
 ## Build
 
-Use `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Use `npm run build` to build the project. The build artifacts will be stored in the `dist/app/` directory.
 
 ## Further help
 
