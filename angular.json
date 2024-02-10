@@ -71,11 +71,11 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-playwright:build:production",
-              "proxyConfig": "server.config.js"
+              "proxyConfig": "proxies/server.config.js"
             },
             "development": {
               "browserTarget": "angular-playwright:build:development",
-              "proxyConfig": "server.config.js"
+              "proxyConfig": "proxies/server.config.js"
             }
           },
           "defaultConfiguration": "development"

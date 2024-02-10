@@ -1,4 +1,5 @@
-const DEBUG_MODE = process.argv.includes('--runInBand') || process.argv.includes('-t');
+const DEBUG_MODE =
+  process.argv.includes('--runInBand') || process.argv.includes('-t');
 const DEBUG_CONFIG = ['<rootDir>/src/test.ts'];
 
 /**
@@ -13,6 +14,7 @@ module.exports = {
   setupFilesAfterEnv: DEBUG_MODE ? DEBUG_CONFIG : [],
   globalSetup: 'jest-preset-angular/global-setup',
   testMatch: ['<rootDir>/src/app/**/*.spec.ts'],
+  moduleNameMapper: { '@api/(.*)': '<rootDir>/build/@api/$1' },
   collectCoverage: true,
   coverageReporters: ['json', 'lcov', 'text-summary'],
   coverageDirectory: 'build/coverage',

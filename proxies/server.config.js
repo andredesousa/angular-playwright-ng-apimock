@@ -6,7 +6,7 @@ const PROXY_CONFIG = {
     secure: false,
     target: mockServer,
   },
-  '/api/*': {
+  '/v1/*': {
     logLevel: 'info',
     secure: false,
     target: mockServer,

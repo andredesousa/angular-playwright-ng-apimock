@@ -80,7 +80,7 @@ These functionalities are provided natively or based on plugins.
 
 ## Build
 
-Use `npm run build` to build the project. The build artifacts will be stored in the `dist/app/` directory.
+Use `npm run build` to build the project. The build artifacts will be stored in the `build/app/` directory.
 
 ## Further help
 
